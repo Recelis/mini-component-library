@@ -5,6 +5,31 @@ import styled from 'styled-components';
 import { COLORS } from '../../constants';
 import VisuallyHidden from '../VisuallyHidden';
 
+const SIZES_STYLES = {
+  'small': {
+
+  },
+  'medium': {
+
+  },
+  'large': {
+
+  }
+}
+
+const ProgressBarSVGBase = styled.svg`
+  height: var(--height);
+  font-family: "Roboto", sans-serif;
+  padding: var(--padding);
+  border-radius: var(--borderRadius);
+  border: 2px solid transparent;
+
+  &:focus {
+    outline-color: ${COLORS.primary};
+    outline-offset: 4px;
+  }
+`;
+
 const ProgressBar = ({ value, size }) => {
   return <div 
           role="meter" 
