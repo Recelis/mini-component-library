@@ -7,13 +7,16 @@ import VisuallyHidden from '../VisuallyHidden';
 
 const SIZES_STYLES = {
   'small': {
-
+    width: '100%',
+    height: '8px'
   },
   'medium': {
-
+    width: '100%',
+    height: '12px'
   },
   'large': {
-
+    width: '100%',
+    height: '24px'
   }
 }
 
@@ -38,15 +41,15 @@ const ProgressBar = ({ value, size }) => {
           aria-valuemax={100} 
           aria-labelledby='Progress Bar'
         >
-          <svg width="100"
-            height="100"
+          <svg width={SIZES_STYLES[size].width}
+            height={SIZES_STYLES[size].height}
             class="fill"
             aria-hidden="true"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg">
             <rect x="0"
                   y="0"
-                  width={value}
+                  width={value + '%'}
                   height="100%"
                   fill="red"
             >  
