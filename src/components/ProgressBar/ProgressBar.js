@@ -20,6 +20,11 @@ const SIZES_STYLES = {
   }
 }
 
+const ProgressBarBackground = styled.div`
+  box-shadow: 0px 2px 4px 0px #80808059 inset;
+  border-radius: 8px;
+`
+
 const ProgressBarSVGBase = styled.svg`
   height: var(--height);
   font-family: "Roboto", sans-serif;
@@ -34,14 +39,14 @@ const ProgressBarSVGBase = styled.svg`
 `;
 
 const ProgressBar = ({ value, size }) => {
-  return <div 
+  return <ProgressBarBackground
           role="meter" 
           aria-valuenow={value} 
           aria-valuemin={0} 
           aria-valuemax={100} 
           aria-labelledby='Progress Bar'
         >
-          <svg width={SIZES_STYLES[size].width}
+          <ProgressBarSVGBase width={SIZES_STYLES[size].width}
             height={SIZES_STYLES[size].height}
             class="fill"
             aria-hidden="true"
@@ -54,8 +59,8 @@ const ProgressBar = ({ value, size }) => {
                   fill="red"
             >  
             </rect>
-          </svg>
-        </div>;
+          </ProgressBarSVGBase>
+        </ProgressBarBackground>;
 };
 
 export default ProgressBar;
