@@ -20,16 +20,13 @@ const SIZES_STYLES = {
   }
 }
 
-const ProgressBarBackground = styled.div`
-  box-shadow: 0px 2px 4px 0px #80808059 inset;
-  border-radius: 8px;
-`
 
 const ProgressBarSVGBase = styled.svg`
+  box-shadow: 0px 2px 4px 0px #80808059 inset;
+  border-radius: 8px;
   height: var(--height);
   font-family: "Roboto", sans-serif;
   padding: var(--padding);
-  border-radius: var(--borderRadius);
   border: 2px solid transparent;
 
   &:focus {
@@ -39,7 +36,7 @@ const ProgressBarSVGBase = styled.svg`
 `;
 
 const ProgressBar = ({ value, size }) => {
-  return <ProgressBarBackground
+  return <div
           role="meter" 
           aria-valuenow={value} 
           aria-valuemin={0} 
@@ -60,7 +57,7 @@ const ProgressBar = ({ value, size }) => {
             >  
             </rect>
           </ProgressBarSVGBase>
-        </ProgressBarBackground>;
+        </div>;
 };
 
 export default ProgressBar;
