@@ -22,7 +22,11 @@ export const ManagedSelect = () => {
         id="filter-by"
         label="Sort"
         value={value}
-        onChange={(ev) => setValue(ev.target.value)}
+        onChange={(ev) => {
+          console.log(ev.target.value)
+          setValue(ev.target.value)
+          }
+        }
       >
         <option value="newest">Newest Releases</option>
         <option value="price">Price</option>
